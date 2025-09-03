@@ -1,12 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
+    <title>苏州街19号群公告</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .announcement-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      .announcement-header {
+        background: #ff7e5f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .announcement-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .announcement-date {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .announcement-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 28px;
+      }
+
+      .announcement-content {
+        padding: 30px;
+      }
+
+      .announcement-section {
+        margin-bottom: 25px;
+      }
+
+      .section-title {
+        color: #ff7e5f;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .section-title i {
+        margin-right: 10px;
+      }
+
+      .section-content {
+        line-height: 1.6;
+        color: #333;
+        padding-left: 30px;
+      }
+
+      .important-note {
+        background: #fff9e6;
+        border-left: 4px solid #ffc107;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .contact-info {
+        background: #f0f8ff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #ff7e5f;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #ff6b4a;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+      }
+
+      @media (max-width: 600px) {
+        .announcement-content {
+          padding: 20px;
+        }
+
+        .section-content {
+          padding-left: 20px;
+        }
+
+        .announcement-title {
+          font-size: 20px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="container">
+      <div class="announcement-card">
+        <div class="announcement-header">
+          <h1 class="announcement-title">群公告</h1>
+          <div class="announcement-date">发布日期: 2025年09月03日</div>
+          <div class="announcement-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+        </div>
+
+        <div class="announcement-content">
+          <div class="announcement-section">
+            <div class="section-title">
+              <i class="fas fa-info-circle"></i>公告主题
+            </div>
+            <div class="section-content">
+              欢迎加入本群！请各位成员遵守群规，共同维护良好的交流环境。
+            </div>
+          </div>
+
+          <div class="announcement-section">
+            <div class="section-title">
+              <i class="fas fa-list-ol"></i>主要事项
+            </div>
+            <div class="section-content">
+              <ol>
+                <li>禁止发布广告链接。</li>
+                <li>鼓励每周举行聚餐分享行业资讯和有价值的内容。</li>
+                <li>欢迎分享行业资讯和有价值的内容。</li>
+              </ol>
+            </div>
+          </div>
+          <div class="announcement-section">
+            <div class="section-title">
+              <i class="fas fa-list-ol"></i>可能对你有帮助的事项
+            </div>
+            <div class="section-content">
+              <ol>
+                <li>
+                  礼拜时间可以在微信小程序：<a
+                    href="#小程序://时光屏/3yQt0MNQ7iQ6bEx"
+                  >
+                    穆易时光屏</a
+                  >中查看
+                </li>
+                <li>
+                  <div>清真美食分享，有兴趣的朋友可以用高德地图扫码进群。</div>
+                  <img width="30%" src="./qzfood.jpg" alt="" srcset="" />
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- <div class="important-note">
+            <strong>重要提示：</strong
+            >本群将于下月初清理不活跃成员，请积极参与群内讨论。
+          </div> -->
+
+          <!-- <div class="announcement-section">
+            <div class="section-title">
+              <i class="fas fa-calendar-alt"></i>活动预告
+            </div>
+            <div class="section-content">
+              <p>11月5日：行业专家分享会 - "未来行业发展趋势"</p>
+              <p>11月12日：线上交流会议 - 自由主题讨论</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- <div class="footer">© 2023 群公告 | 使用HTML/CSS创建</div> -->
+    </div>
+
+    <script>
+      // document.querySelector('.announcement-date').innerHTML =
+      //   '发布日期: ' + new Date().toLocaleDateString()
+      // document.addEventListener('DOMContentLoaded', function () {
+      //   const btn = document.querySelector('.btn')
+      //   btn.addEventListener('click', function () {
+      //     alert('感谢您已阅读本公告！')
+      //     btn.textContent = '已确认'
+      //     btn.style.background = '#4caf50'
+      //     btn.disabled = true
+      //   })
+      // })
+    </script>
   </body>
 </html>
